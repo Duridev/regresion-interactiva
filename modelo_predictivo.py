@@ -29,3 +29,7 @@ if len(horas) < 2:
 df = pd.DataFrame({'Horas': horas, 'Notas': notas})
 print("\n Datos cargados: ")
 print(df)
+
+# Guardar CSV
+df.to_csv("datos_estudio.csv", index=False)
+print("\n Archivo guardado como datos_estudio.csv")
