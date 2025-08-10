@@ -24,3 +24,8 @@ while  True:
 if len(horas) < 2:
     print("Necesitas al menos dos registros para entrenar el modelo.")
     exit()
+    
+#Crear y mostrar tabla
+df = pd.DataFrame({'Horas': horas, 'Notas': notas})
+print("\n Datos cargados: ")
+print(df)
