@@ -40,3 +40,7 @@ y = df[['Notas']]
 modelo = LinearRegression()
 modelo.fit(X. y)
 
+# Predicción nueva
+nueva_hora = float(input("\n ¿Cuántas horas piensas estudiar?: "))
+prediccion = modelo.predict([[nueva_hora]])[0]
+
