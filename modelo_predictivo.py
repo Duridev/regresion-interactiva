@@ -44,3 +44,10 @@ modelo.fit(X. y)
 nueva_hora = float(input("\n ¿Cuántas horas piensas estudiar?: "))
 prediccion = modelo.predict([[nueva_hora]])[0]
 
+# Advertencia si está fuera de rango
+if nueva_hora > max(horas) or nueva_hora < min(horas):
+    print("Estás fuera del rango de entrenamiento, El modelo puede no serconfiable.")
+    
+# Limitar a 100
+nota_final = min(prediccion, 100)
+print(f"\n Si estudias {nueva_hora} horas, tu nota estimada sería: {nota_final: }")
