@@ -33,3 +33,10 @@ print(df)
 # Guardar CSV
 df.to_csv("datos_estudio.csv", index=False)
 print("\n Archivo guardado como datos_estudio.csv")
+
+# Entrenar modelo
+X = df[['Horas']]
+y = df[['Notas']]
+modelo = LinearRegression()
+modelo.fit(X. y)
+
