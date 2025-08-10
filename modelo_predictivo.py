@@ -50,4 +50,18 @@ if nueva_hora > max(horas) or nueva_hora < min(horas):
     
 # Limitar a 100
 nota_final = min(prediccion, 100)
-print(f"\n Si estudias {nueva_hora} horas, tu nota estimada sería: {nota_final: }")
+print(f"\n Si estudias {nueva_hora} horas, tu nota estimada sería: {nota_final:2f}")
+
+# Gráfico
+plt.figure(figsize=(8,5))
+plt.scatter(df['Horas'], df['Notas'], color='blue', label='Datos reales')
+plt.plot(df['Horas'], modelo.predict(X), color='red', label='Modelo lineal')
+plt.scatter(nueva_hora, nota_final, color='green', s=100, label='Predicción nueva')
+plt.title('Horas de Estudio v/s Nota')
+plt.xlabel('Horas')
+plt.ylabel('Notas')
+plt.grid(True)
+plt.legend("Gráfico predictivo")
+plt.tight_layout()
+plt.show()
+
